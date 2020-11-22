@@ -11,11 +11,44 @@ import (
 
 type Deck []string
 
-func (d Deck) Shuffle(){
+func NewDeck() Deck {
+	cards := Deck{}
+
+	cardSuit := []string{
+		"Spades",
+		"Heart",
+		"Diamond",
+		"Club",
+	}
+	cardValues := []string{
+		"Ace",
+		"Two",
+		"Three",
+		"Four",
+		"Five",
+		"Six",
+		"Seven",
+		"Eight",
+		"Nine",
+		"Ten",
+		"Jack",
+		"Queen",
+		"King",
+	}
+
+	for _, suit := range cardSuit {
+		for _, val := range cardValues {
+			cards = append(cards, val+" Of "+suit)
+		}
+	}
+	return cards
+}
+
+func (d Deck) Shuffle() {
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 	for i := range d {
-		newPosition := r.Intn(len(d)-1)
+		newPosition := r.Intn(len(d) - 1)
 		d[i], d[newPosition] = d[newPosition], d[i]
 	}
 }
@@ -49,6 +82,6 @@ func NewDeckFromFile(filename string) Deck {
 		os.Exit(1)
 	}
 	fmt.Println(string(bs))
-	cardsString := strings.Split(string(bs),",")
+	cardsString := strings.Split(string(bs), ",")
 	return Deck(cardsString)
 }

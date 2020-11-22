@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-/*
+
 	arr := []int{1, 2, 3, 4}
 	fmt.Println(arr)
 	modifyArr(arr)
@@ -36,24 +36,22 @@ func main() {
 	}
 	fmt.Println("\n==============CardSet Now:======================")
 	cards.Print()
-/*	d1, d2 := rohit.Deal(cards, 5)
+	d1, d2 := rohit.Deal(cards, 5)
 
 	fmt.Println("\n===================First Set====================")
 	d1.Print()
 
 	fmt.Println("\n===================Second Set===================")
 	d2.Print()
-*/
-/*
+
 	fmt.Println("=======Deck Of Cards========:\n", cards.ToString())
 	fmt.Println("============Save to File small_deck.txt=============")
 	err := cards.SaveToFile("small_deck.txt")
 	if err != nil {
 		fmt.Println("Error:", err)
-	}else {
+	} else {
 		fmt.Println("File created successfully with deck")
 	}
-*/
 
 	fmt.Println("============Read from File small_deck.txt and convert it into Deck =============")
 	filename := "small_deck.txt"
@@ -67,7 +65,13 @@ func main() {
 	fmt.Println("============Deck 4 after shuffle=============")
 	d4.Print()
 
+	friendsCount := 11
+	fmt.Printf("Hello %d Friends\n", friendsCount)
 
+	deck := rohit.NewDeck()
+
+	fmt.Printf("\n=======================New Deck ========================\n %+v\n", deck)
+	deck.Print()
 }
 
 func modifyArr(a []int) {
