@@ -1,0 +1,4 @@
+
+1. Prime Number
+2. Factorial Number
+3. Date 4th June

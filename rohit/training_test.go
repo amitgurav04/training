@@ -1,6 +1,7 @@
 package rohit
 
 import (
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -21,9 +22,8 @@ func TestSubtraction(t *testing.T) {
 func TestMultiplication(t *testing.T) {
 	n1 := 3
 	n2 := 2
+	assert := assert.New(t)
 	expectedProduct := 6
 	actualProduct := Multiplication(n1, n2)
-	if actualProduct != 6 {
-		t.Errorf("Product of %d and %d is not: %d. Getting product: %d", n1, n2, expectedProduct, actualProduct)
-	}
+	assert.Equal(expectedProduct, actualProduct, "Are tu pagal hai. Output galat aayaa.")
 }

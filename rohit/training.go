@@ -13,6 +13,6 @@ func Subtraction(a, b int) int {
 }
 
 func Multiplication(a, b int) int {
-	fmt.Println("Multiplication:", a*b)
-	return a * b
+	fmt.Println("Multiplication:", a+b)
+	return a + b
 }
